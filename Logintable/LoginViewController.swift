@@ -23,8 +23,15 @@ class LoginViewController: UIViewController {
         textPassword.delegate = self
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if  textName.text != "Alexey" || textPassword.text != "Efimov" {
+            showAlert(title: "Invalid login or password",
+                      message: "Place, enter correct login and password")
+            return
+        } else {
+        
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        textName.text = welcomeVC.userLabel
+        welcomeVC.userName = textName.text
+    }
     }
 
     private func initialSetup() {
@@ -45,6 +52,11 @@ class LoginViewController: UIViewController {
     @IBAction func forgotPassword() {
         showAlert(title: "Oops!", message: "Your password is Efimov")
     }
+    
+    @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
+        textName.text = ""
+        textPassword.text = ""
+    }
 }
 // MARK: - Private Methods
 
@@ -59,7 +71,7 @@ extension LoginViewController: UITextFieldDelegate {
             textPassword.becomeFirstResponder()
         } else {
             logInAction()
-            performSegue(withIdentifier: , sender: nil)
+         //   performSegue(withIdentifier: , sender: nil)
         }
         return true
     }

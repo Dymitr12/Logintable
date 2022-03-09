@@ -43,7 +43,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Log In"/>
                                 <connections>
                                     <action selector="logInAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="zeB-eb-uNS"/>
-                                    <segue destination="6bG-nA-zRn" kind="show" destinationCreationSelector="showWelcomeVC:" id="UXK-a8-Jvn"/>
+                                    <segue destination="6bG-nA-zRn" kind="presentation" identifier="showWelcomeVC" modalPresentationStyle="fullScreen" id="fBw-0Z-d98"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="162" translatesAutoresizingMaskIntoConstraints="NO" id="d6k-nM-L2e">
@@ -100,27 +100,19 @@
             <objects>
                 <viewController id="6bG-nA-zRn" customClass="WelcomeViewController" customModule="Logintable" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TfK-rd-hRC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="We3-7E-YwN">
-                                <rect key="frame" x="169.5" y="569" width="75.5" height="31"/>
+                                <rect key="frame" x="169.5" y="623" width="75.5" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Log Out"/>
                                 <connections>
                                     <action selector="logOut" destination="6bG-nA-zRn" eventType="touchUpInside" id="k5s-o0-gAf"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome, " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8S-Zp-JmC">
-                                <rect key="frame" x="132" y="96" width="80" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJT-bf-9Wa">
-                                <rect key="frame" x="220" y="96" width="36" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJT-bf-9Wa">
+                                <rect key="frame" x="189" y="214" width="36" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -130,7 +122,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Lco-I8-SzJ" firstAttribute="bottom" secondItem="We3-7E-YwN" secondAttribute="bottom" constant="208" id="8bf-m7-vCT"/>
+                            <constraint firstItem="hJT-bf-9Wa" firstAttribute="top" secondItem="Lco-I8-SzJ" secondAttribute="top" constant="170" id="FPS-A1-8dj"/>
                             <constraint firstItem="We3-7E-YwN" firstAttribute="centerX" secondItem="TfK-rd-hRC" secondAttribute="centerX" id="alo-zg-PYt"/>
+                            <constraint firstItem="hJT-bf-9Wa" firstAttribute="centerX" secondItem="TfK-rd-hRC" secondAttribute="centerX" id="ebe-2U-nav"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LUH-h6-ZuA"/>
